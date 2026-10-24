@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>nothing at this address</title>
+<meta name="robots" content="noindex" />
+<meta name="color-scheme" content="dark" />
+<link rel="icon" href="/assets/star.svg" type="image/svg+xml" />
+<style>
+  /* Self contained on purpose: a 404 is served from every wrong path, so it
+     cannot depend on a relative stylesheet or a relative link home. */
+  :root { color-scheme: dark; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 2rem 1.25rem;
+    background: #1a1016;
+    color: #f7ebf3;
+    font-family: "Google Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  main { max-width: 34rem; }
+  h1 { font-size: clamp(1.9rem, 5vw, 2.75rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.045em; margin: 0 0 1rem; }
+  p { margin: 0 0 1rem; color: #cfb4c7; }
+  a { color: #ff9ecf; text-underline-offset: 0.18em; }
+  a:hover { color: #8fe6e2; }
+  :focus-visible { outline: 2px solid #8fe6e2; outline-offset: 3px; border-radius: 4px; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 0.6rem 1.15rem;
+    border-radius: 14px;
+    border: 1px solid #8a6379;
+    background: #ff9ecf;
+    color: #2a0f1f;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    text-decoration: none;
+  }
+  .button:hover { background: #ffb2d9; color: #2a0f1f; }
+</style>
+</head>
+<body>
+<main>
+  <h1>nothing at this address</h1>
+  <p>A wrong star, a stale link, or a page I moved and forgot to tell anyone about. Sorry either way. It's on me, not you.</p>
+  <p><a class="button" href="/">take me home</a></p>
+  <p>If a link on the site sent you here, <a href="mailto:wuzzy.nizzy@gmail.com">mail me</a> and I'll fix it.</p>
+</main>
+</body>
+</html>
