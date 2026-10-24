@@ -7,6 +7,7 @@ he/him · femboy · backend dev who let the agents in
 [![email](https://img.shields.io/badge/wuzzy.nizzy%40gmail.com-ff8fc7?style=flat-square&labelColor=1a1016&logo=gmail&logoColor=ff8fc7)](mailto:wuzzy.nizzy@gmail.com)
 [![Ko-fi](https://img.shields.io/badge/Support%20Nizzy%20%E2%98%86-ff5fa2?style=flat-square&labelColor=1a1016&logo=kofi&logoColor=ffffff)](https://ko-fi.com/wuzzynizzy)
 [![jAgent](https://img.shields.io/badge/read%20jAgent-c9a7ff?style=flat-square&labelColor=1a1016&logo=github&logoColor=c9a7ff)](https://github.com/wuzzynizzy/jAgent)
+[![site](https://img.shields.io/badge/my%20little%20site-8fe6e2?style=flat-square&labelColor=1a1016&logo=githubpages&logoColor=8fe6e2)](https://wuzzynizzy.github.io)
 
 </div>
 
@@ -79,6 +80,8 @@ Backend is home turf. The HTML and CSS up there took me years of being bad at th
 ## what i've built
 
 [jAgent](https://github.com/wuzzynizzy/jAgent) is a static site covering the fourteen agent skills, workflows and design resources I actually read instead of skimming. 124 indexed passages, twelve task routes, a typed knowledge graph, and a build that fails when a link rots. No server, no vector database and no model in the loop, which the site says on three separate pages because people kept assuming otherwise. It also runs browser checks at five viewport widths, since "looks fine on my laptop" has ended more careers than Yuji.
+
+The site lives in [`site/`](site/) and is meant for **https://wuzzynizzy.github.io**, which needs a repo named `wuzzynizzy.github.io` before GitHub will serve it there. One page, self hosted font, live numbers from the GitHub API, and a small constellation you can click.
 
 This repo is a README. It's doing its best.
 
