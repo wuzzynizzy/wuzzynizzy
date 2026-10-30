@@ -2165,7 +2165,7 @@ body::-webkit-scrollbar {
 
 /* thumb feedback on touch, where there is no hover to lean on. The colour is
    the only thing that changes: every transform on these controls belongs to the
-   springs in app.js, and check.py fails the build if an :active rule claims one. */
+   springs in app.js, so an :active rule must not claim one. */
 @media (hover: none), (pointer: coarse) {
   button:active,
   a:active,
