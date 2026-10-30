@@ -1,82 +1,129 @@
 <div align="center">
 
-<img src="assets/wuzzynizzy-site-icon.png" alt="wuzzynizzy.github.io/wuzzynizzy" width="128" height="128" />
+# nizzy ☆
 
-# wuzzynizzy.github.io/wuzzynizzy
+he/him · femboy · backend dev who let the agents in
 
-Personal single-page site and reaction sticker host for Nizzy (`@wuzzynizzy`), served from GitHub Pages with zero build step.
-
-[![License](https://img.shields.io/badge/license-MIT-8fe6e2?style=flat-square&labelColor=1a1016)](LICENSE)
-[![Status](https://img.shields.io/badge/status-ready_for_pages-ff8fc7?style=flat-square&labelColor=1a1016)](HANDOFF.md)
-[![Stack](https://img.shields.io/badge/stack-HTML_CSS_JS-c9a7ff?style=flat-square&labelColor=1a1016)](index.html)
+[![email](https://img.shields.io/badge/wuzzy.nizzy%40gmail.com-ff8fc7?style=flat-square&labelColor=1a1016&logo=gmail&logoColor=ff8fc7)](mailto:wuzzy.nizzy@gmail.com)
+[![Ko-fi](https://img.shields.io/badge/Support%20Nizzy%20%E2%98%86-ff5fa2?style=flat-square&labelColor=1a1016&logo=kofi&logoColor=ffffff)](https://ko-fi.com/wuzzynizzy)
+[![jAgent](https://img.shields.io/badge/read%20jAgent-c9a7ff?style=flat-square&labelColor=1a1016&logo=github&logoColor=c9a7ff)](https://github.com/wuzzynizzy/jAgent)
+[![site](https://img.shields.io/badge/my%20little%20site-8fe6e2?style=flat-square&labelColor=1a1016&logo=githubpages&logoColor=8fe6e2)](https://wuzzynizzy.github.io/wuzzynizzy/)
 
 </div>
 
-## What it does
+hey, thanks for stopping by :3
 
-`wuzzynizzy/wuzzynizzy` serves `https://wuzzynizzy.github.io/wuzzynizzy` straight from the repository root, under the legacy Pages builder. The profile copy that used to hold this filename now lives in [`PROFILE.md`](PROFILE.md). The page highlights Nizzy's backend and AI application work on a plum and pink dark surface (`#1a1016`, `#ff5fa2`, `#ff8fc7`, `#c9a7ff`, `#8fe6e2`, `#f6e8f1`), using self-hosted Comfortaa and Quicksand WOFF2 fonts, crisp vector SVG pills (`Arena AI`, `Wispbyte`, `Kiro`, `Claude Code`, `VSCodium`, plus contact and thanks badges), interactive drag-and-fling sticker physics that bloom cats in and drop them out of frame, thirteen individually animated stack chips, spring-driven cards, chips and buttons whose clicks push back, a fully hidden scrollbar, a self-hosted subset of the four text faces, palette-optimised stickers, live GitHub stat cards, and all 88 Animal Crossing: New Horizons reaction stickers at stable `/emoji/<name>.png` URLs for hotlinking across GitHub repos. It is a personal home page rather than a project portfolio.
+I'm Nizzy. I've been writing code since I was 13, and for most of that time I was the backend guy. Databases, endpoints, auth, queues, migrations that ran at 2am. Give me a schema and a load average and I'm happy. Ask me to make it look nice and you'd get a form with default browser styling and a hopeful expression.
 
-## Quickstart
+Frontend stayed my weak side for years. Then agents got good, and I stopped treating "I can't do CSS" as part of my personality.
 
-Clone the repository and serve the root directory with Python 3:
+## how i work now
 
-```bash
-git clone https://github.com/wuzzynizzy/wuzzynizzy.git
-cd wuzzynizzy
-python3 -m http.server 8000
-```
+I write the spec, the agent writes the code, I read the code.
 
-Open `http://127.0.0.1:8000` in a browser. Tapping or dragging any Animal Crossing cat mascot flings it across the screen with bounce physics; retired cats fall past the bottom edge instead of blinking out, and every emoji press runs on one damped spring so rapid tapping stays smooth, `say hi` opens a quick-copy contact card, and clicking any reaction tile in the sticker section opens the sticker inspector modal (with URL, Markdown, and HTML `<img>` snippet copy buttons plus animated toast feedback).
+Spec-driven development is the part that made everything click. I write the user stories, the constraints, the acceptance criteria and the edge cases I'd normally skip when I'm tired. The agent builds against that document instead of guessing from my tone of voice. A thin spec gives you confidently wrong output, and then there's nobody to blame except me, which is the cheapest feedback loop I've ever found.
 
-## Usage
+Years of backend habits turned out to be perfect training for this. Thinking in schemas, failure modes and auth boundaries is most of the job now, and the rest is opening the diff and reading it properly. An agent that ships in forty seconds and gets two things wrong is just a very fast intern with commit access.
 
-Push the repository root to `main` on `wuzzynizzy/wuzzynizzy`. Pages already deploys from `main` / `/ (root)` with the legacy builder, and `.nojekyll` keeps Jekyll from processing the folders, so the site is live about a minute after the merge. There is no build step and no workflow to keep green.
+Frontend is what actually changed. I can build the interface now and I enjoy it, which still feels strange to type. There's a small grief in getting good at something overnight after being bad at it for a decade, so I've decided the job is judgement: what to build, what to throw out, and what counts as done.
 
-To embed a hosted reaction sticker inside another Markdown file or GitHub README, copy a URL from [`EMOJI-CHEATSHEET.md`](EMOJI-CHEATSHEET.md):
+Currently: agent workflows, source code, and one CSS grid that keeps winning.
 
-```html
-<img src="https://wuzzynizzy.github.io/wuzzynizzy/emoji/delight.png" width="24" height="24" alt="delight" align="absmiddle" />
-```
+## the five stars, but for tasks
 
-## Configuration
+Kirara marks five things with stars from the Southern Cross, and they can only reach each other in order: Imai, Acrux, Mimosa, Ginan, Gacrux. Skip one and an invisible barrier throws you into a parking stop.
 
-All styling tokens live in `:root` at the top of `styles.css`. The top 8-line and bottom 7-line rotating phrases live in `data-lines` attributes on `#typing-top` and `#typing-bottom` in `index.html`, stepped progressively by `app.js` alongside the `PointerEvent` sticker fling engine, the emoji spring controllers, and the segmented `tile tap:` switch, all paused or simplified automatically when `prefers-reduced-motion: reduce` is active. No environment variables, bundler, or runtime secrets are used.
-
-## Project layout
+Same shape, fewer concussions:
 
 ```text
-.
-├── .nojekyll               # bypasses Jekyll on GitHub Pages
-├── index.html              # single-page personal site with sticky centered navbar
-├── 404.html                # custom 404 page, base href keeps it working at any depth
-├── styles.css              # :root palette tokens, @font-face rules, animations
-├── app.js                  # fling physics, springs on every control, scroll-spy, typing, URL copy
-├── EMOJI-CHEATSHEET.md     # Markdown and HTML hotlink guide for all 88 PNGs
-├── check.py                # automated static, asset, CSS and copy gate
-├── assets/
-│   ├── wuzzynizzy-site-icon.png # 512x512 transparent emoji project icon
-│   ├── wuzzynizzy-site-og.html  # editable 1200x600 social metadata card source
-│   ├── og-image-1200x600.png # exported Open Graph and Twitter card PNG
-│   ├── nizzy-banner.png    # header banner
-│   ├── fonts/              # Comfortaa, Quicksand and symbol WOFF2 + OFL.txt
-│   └── icons/              # 16 local vector SVG brand and contact icons
-├── emoji/                  # all 88 Animal Crossing square reaction PNGs (128px to 1000px)
-├── PROFILE.md              # the profile card copy this repo used to carry
-├── AGENTS.md               # contributor and agent operating rules
-├── HANDOFF.md              # session state, verification log and open items
-└── LICENSE                 # MIT license
+spec  →  plan  →  build  →  check  →  ship
 ```
 
-## Verification
+You can skip `check`. That works right up until it doesn't.
 
-Run the repository verification gate from the root directory:
+## stats
 
-```bash
-python3 check.py
-```
+<div align="center">
 
-`check.py` checks file presence, PNG dimensions (`512x512` icon and `1200x600` OG card), WOFF2 font files, crisp vector SVG icons in `assets/icons/`, zero blurry static `img.shields.io` badges outside `#stats`, `Arena AI` and `Wispbyte` naming, fling physics hooks (bloom in, retire out of frame, never deleted while visible), emoji spring hooks, the card and control spring groups, the segmented switch, a hidden scrollbar, whole-body modal paging, and the bans on generated content, accent stripes, `:root` palette centralization, `alt` attributes on every `<img>`, all 88 `/emoji/<name>.png` paths, and voice rules.
+<img height="165" alt="Nizzy's GitHub stats: commits, pull requests, issues and stars" src="https://github-readme-stats.vercel.app/api?username=wuzzynizzy&show_icons=true&include_all_commits=true&hide_border=true&bg_color=1a1016&title_color=ff8fc7&icon_color=7fe3e0&text_color=f6e8f1&border_radius=14" />
+<img height="165" alt="Most used languages by repository byte count" src="https://github-readme-stats.vercel.app/api/top-langs/?username=wuzzynizzy&layout=compact&hide_border=true&bg_color=1a1016&title_color=ff8fc7&text_color=f6e8f1&border_radius=14" />
 
-## License
+<br />
 
-MIT. See [`LICENSE`](LICENSE). Self-hosted Comfortaa and Quicksand font binaries in `assets/fonts/` (alongside the Noto Sans Symbols 2 cute-glyph subset) are licensed under the SIL Open Font License 1.1 (`assets/fonts/OFL.txt`).
+<img alt="Commit streak: current streak, longest streak and total contributions" src="https://streak-stats.demolab.com?user=wuzzynizzy&hide_border=true&background=1a1016&ring=ff8fc7&fire=7fe3e0&currStreakLabel=ff8fc7&sideLabels=f6e8f1&dates=c9a7ff&currStreakNum=f6e8f1&sideNums=f6e8f1&border_radius=14" />
+
+<br />
+
+<img width="100%" alt="Contribution activity by day" src="https://github-readme-activity-graph.vercel.app/graph?username=wuzzynizzy&bg_color=1a1016&color=ff8fc7&line=7fe3e0&point=c9a7ff&area=true&hide_border=true&custom_title=commit%20weather" />
+
+<br />
+
+![followers](https://img.shields.io/github/followers/wuzzynizzy?label=followers&color=ff5fa2&style=flat-square&labelColor=1a1016)
+![stars](https://img.shields.io/github/stars/wuzzynizzy?label=stars&color=ff5fa2&style=flat-square&labelColor=1a1016)
+![jAgent languages](https://img.shields.io/github/languages/count/wuzzynizzy/jAgent?label=languages%20in%20jAgent&color=c9a7ff&style=flat-square&labelColor=1a1016)
+![last commit](https://img.shields.io/github/last-commit/wuzzynizzy/jAgent?label=last%20jAgent%20commit&color=c9a7ff&style=flat-square&labelColor=1a1016)
+
+</div>
+
+The account is brand new, so these numbers are small and true. Watch them grow, it's free.
+
+## stack
+
+<div align="center">
+
+[![My stack](https://skillicons.dev/icons?i=py,html,css,js,nodejs,markdown,bash,linux,git,github,githubactions,cloudflare,vscode&theme=dark&perline=13)](https://skillicons.dev)
+
+</div>
+
+Backend is home turf. The HTML and CSS up there took me years of being bad at them, so they stay.
+
+## what i've built
+
+[jAgent](https://github.com/wuzzynizzy/jAgent) is a static site covering the fourteen agent skills, workflows and design resources I actually read instead of skimming. 124 indexed passages, twelve task routes, a typed knowledge graph, and a build that fails when a link rots. No server, no vector database and no model in the loop, which the site says on three separate pages because people kept assuming otherwise. It also runs browser checks at five viewport widths, since "looks fine on my laptop" has ended more careers than Yuji.
+
+My own page is at **https://wuzzynizzy.github.io/wuzzynizzy/**, built from this repository: a single screen with my live GitHub numbers and the 88 Animal Crossing reaction stickers I keep throwing around. That is why the repo carries HTML and not just this README.
+
+## what i actually use
+
+People ask, so here's the honest list, all linked:
+
+- [kiro](https://kiro.dev) for spec-driven work, where the plan and the tasks matter more than the chat window
+- [arena](https://arena.ai) for running agents, including every line of this page
+- [claude](https://claude.ai) for the arguing
+- [wispbyte](https://wispbyte.com) for hosting the bots and the servers
+- google drive as the agent's drive: rules, handoffs, checkpoints, everything I want a fresh chat to pick up
+
+Connectors are the fun part. Gmail, Linear, Drive, whatever the task needs. If a thing has an API or a connector, an agent can probably drive it, and I'll happily spend an evening wiring it up.
+
+Thank you to all of them. Nobody paid me to write this, I just like the tools and I'm loud about it.
+
+## art policy ♡
+
+No AI art on this page. Every visual here is unicode, a badge that renders from real repo data, or a chart GitHub draws from actual numbers. If generated art ever shows up on my profile, it's a joke and I'll label it as one.
+
+Human artists get named, credited and linked, always. If you want your work here, mail me and tell me how you want the credit to read.
+
+## say hi
+
+If something here saved you an afternoon, or you want me to keep writing build checks at 2am:
+
+<div align="center">
+
+[![Support Nizzy ☆ on Ko-fi](https://img.shields.io/badge/Support%20Nizzy%20%E2%98%86%20on%20Ko--fi-ff5fa2?style=for-the-badge&labelColor=1a1016&logo=kofi&logoColor=ffffff)](https://ko-fi.com/wuzzynizzy)
+
+</div>
+
+Mail me anything: [**wuzzy.nizzy@gmail.com**](mailto:wuzzy.nizzy@gmail.com)
+
+Full warning, an AI will read it and draft me a reply before I get there. HAHAHAHA. It's still me hitting send, I promise :3
+
+---
+
+<div align="center">
+<sub>
+
+Kirara Hoshi from <i>Jujutsu Kaisen</i>: star pupils, the Southern Cross, and a technique that's basically dependency injection with feelings. Fan work, unaffiliated with Gege Akutami, Shueisha or MAPPA. Canon says he's a boy, he says he/him, and the fit stays a femboy fit. All three are true, and yes, he'd help you with your parking stop.
+No AI art generated. Built 24 October 2026, published 30 October 2026, Asia/Singapore.
+
+</sub>
+</div>
