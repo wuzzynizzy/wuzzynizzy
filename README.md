@@ -81,7 +81,7 @@ Backend is home turf. The HTML and CSS up there took me years of being bad at th
 
 [jAgent](https://github.com/wuzzynizzy/jAgent) is a static site covering the fourteen agent skills, workflows and design resources I actually read instead of skimming. 124 indexed passages, twelve task routes, a typed knowledge graph, and a build that fails when a link rots. No server, no vector database and no model in the loop, which the site says on three separate pages because people kept assuming otherwise. It also runs browser checks at five viewport widths, since "looks fine on my laptop" has ended more careers than Yuji.
 
-The site lives in [`site/`](site/) and is published at **https://wuzzynizzy.github.io/wuzzynizzy/** by GitHub Pages, from this repository, on every push to `main` that touches `site/`. One page, self hosted font, live numbers from the GitHub API, and a small constellation you can click. The bare `https://wuzzynizzy.github.io` address would need a repository named exactly `wuzzynizzy.github.io`; until that exists, the project page is where it lives.
+My own site lives at the root of this repository and is published at **https://wuzzynizzy.github.io/wuzzynizzy/** by GitHub Pages on every push to `main`. One page, one self hosted font, live numbers from the GitHub API, and 88 reaction stickers you can drag, throw and land. The Animal Crossing cats follow the hand that grabs them, keep the angle they land at, and stop moving when they stop; a sticker you cannot see loads when it comes into view. Open a tile and it gives you the URL, the Markdown and the `<img>` tag, ready to paste.
 
 This repo is a README. It's doing its best.
 
