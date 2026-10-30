@@ -7,7 +7,7 @@ he/him · femboy · backend dev who let the agents in
 [![email](https://img.shields.io/badge/wuzzy.nizzy%40gmail.com-ff8fc7?style=flat-square&labelColor=1a1016&logo=gmail&logoColor=ff8fc7)](mailto:wuzzy.nizzy@gmail.com)
 [![Ko-fi](https://img.shields.io/badge/Support%20Nizzy%20%E2%98%86-ff5fa2?style=flat-square&labelColor=1a1016&logo=kofi&logoColor=ffffff)](https://ko-fi.com/wuzzynizzy)
 [![jAgent](https://img.shields.io/badge/read%20jAgent-c9a7ff?style=flat-square&labelColor=1a1016&logo=github&logoColor=c9a7ff)](https://github.com/wuzzynizzy/jAgent)
-[![site](https://img.shields.io/badge/my%20little%20site-8fe6e2?style=flat-square&labelColor=1a1016&logo=githubpages&logoColor=8fe6e2)](https://wuzzynizzy.github.io)
+[![site](https://img.shields.io/badge/my%20little%20site-8fe6e2?style=flat-square&labelColor=1a1016&logo=githubpages&logoColor=8fe6e2)](https://wuzzynizzy.github.io/wuzzynizzy/)
 
 </div>
 
@@ -81,7 +81,7 @@ Backend is home turf. The HTML and CSS up there took me years of being bad at th
 
 [jAgent](https://github.com/wuzzynizzy/jAgent) is a static site covering the fourteen agent skills, workflows and design resources I actually read instead of skimming. 124 indexed passages, twelve task routes, a typed knowledge graph, and a build that fails when a link rots. No server, no vector database and no model in the loop, which the site says on three separate pages because people kept assuming otherwise. It also runs browser checks at five viewport widths, since "looks fine on my laptop" has ended more careers than Yuji.
 
-The site lives in [`site/`](site/) and is meant for **https://wuzzynizzy.github.io**, which needs a repo named `wuzzynizzy.github.io` before GitHub will serve it there. One page, self hosted font, live numbers from the GitHub API, and a small constellation you can click.
+The site lives in [`site/`](site/) and is published at **https://wuzzynizzy.github.io/wuzzynizzy/** by GitHub Pages, from this repository, on every push to `main` that touches `site/`. One page, self hosted font, live numbers from the GitHub API, and a small constellation you can click. The bare `https://wuzzynizzy.github.io` address would need a repository named exactly `wuzzynizzy.github.io`; until that exists, the project page is where it lives.
 
 This repo is a README. It's doing its best.
 
@@ -125,7 +125,7 @@ Full warning, an AI will read it and draft me a reply before I get there. HAHAHA
 <sub>
 
 Kirara Hoshi from <i>Jujutsu Kaisen</i>: star pupils, the Southern Cross, and a technique that's basically dependency injection with feelings. Fan work, unaffiliated with Gege Akutami, Shueisha or MAPPA. Canon says he's a boy, he says he/him, and the fit stays a femboy fit. All three are true, and yes, he'd help you with your parking stop.
-No AI art generated. Built 24 October 2026, Asia/Singapore.
+No AI art generated. Built 24 October 2026, published 30 October 2026, Asia/Singapore.
 
 </sub>
 </div>

@@ -1,9 +1,14 @@
 name: publish site
 
-# Manual only, on purpose. Pages has not been enabled on this repository, so a
-# push-triggered job would sit there failing. Run this by hand once
-# Settings, Pages, Source is set to "GitHub Actions".
+# Runs on every push to main that touches the site, and by hand when you want a
+# redeploy with no changes. Pages Source must be "GitHub Actions" for the deploy
+# step to have somewhere to go; it is set that way on wuzzynizzy/wuzzynizzy.
 on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:

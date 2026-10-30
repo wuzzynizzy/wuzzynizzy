@@ -36,12 +36,8 @@ Google Sans has no star or heart glyphs, which is why the stars on this page are
 
 ## Deploying
 
-Two different addresses, and they are not interchangeable.
+**Live now: https://wuzzynizzy.github.io/wuzzynizzy/.** Pages on `wuzzynizzy/wuzzynizzy` is set to Source: GitHub Actions, and the `publish site` workflow builds `site/`, runs `check.py`, and deploys it on every push to `main` that touches `site/` or the workflow file. Manual dispatch still works for a redeploy with no changes.
 
-**`wuzzynizzy.github.io`, the address you asked for.** GitHub only serves a user site from a repository named exactly `wuzzynizzy.github.io`. Create that repository, copy the contents of this `site/` folder to its root, and enable Pages with Source set to GitHub Actions. The workflow in this repository lives at `.github/workflows/pages.yml`; copy it to the new repo's `.github/workflows/` and run it by hand.
+**`wuzzynizzy.github.io`, the bare address.** GitHub only serves a user site from a repository named exactly `wuzzynizzy.github.io`. That repository does not exist yet. If it is created, copy the contents of this `site/` folder to its root, enable Pages with Source: GitHub Actions, and change the one absolute path in `404.html` from `/wuzzynizzy/` back to `/`. Nothing else refers to the subpath.
 
-**`wuzzynizzy.github.io/wuzzynizzy/`, the project page.** Same repository as this README, published from the `site/` folder. Enable Pages on `wuzzynizzy/wuzzynizzy` with Source set to GitHub Actions, then run the `publish site` workflow manually.
-
-Either way, `Settings`, `Pages`, `Source: GitHub Actions` is the switch. Until that is done the workflow has nothing to deploy to, which is why it is manual dispatch only instead of failing on every push.
-
-If the site is published under a subpath rather than at the domain root, change the two root relative paths in `404.html` (`/assets/star.svg` and the link home) to match, since a 404 is served from arbitrary depths and cannot use relative paths.
+`404.html` is self contained on purpose: it inlines its icon as a data URI, carries its own styles, loads no script, and links home with an absolute path, because a 404 is served at arbitrary depths under the project subpath and relative paths there point into nowhere.

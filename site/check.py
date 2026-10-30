@@ -89,9 +89,16 @@ for ref in re.findall(r'(?:href|src)="(?!https?:|mailto:|#|/)([^"]+)"', html_src
     if not (ROOT / ref).exists():
         fail(f"index.html references a missing file: {ref}")
 
-for ref in re.findall(r'(?:href|src)="/([^"]+)"', notfound):
-    if not (ROOT / ref).exists():
-        fail(f"404.html references a missing file: /{ref}")
+# the 404 is served at any depth under the project subpath, so it cannot load a
+# relative asset and its way home has to be the absolute published root
+SITE_ROOT = "/wuzzynizzy/"
+if re.search(r'<link[^>]+rel="stylesheet"', notfound) or re.search(r"<script\b", notfound):
+    fail("404.html loads a stylesheet or a script, which breaks at depth.")
+for ref in re.findall(r'(?:href|src)="(/[^"]*)"', notfound):
+    if ref != SITE_ROOT:
+        fail(f"404.html links to {ref}, which is outside the published root {SITE_ROOT}")
+if f'href="{SITE_ROOT}"' not in notfound:
+    fail(f"404.html has no absolute way home to {SITE_ROOT}")
 
 # fonts
 for weight in (400, 500, 700):
