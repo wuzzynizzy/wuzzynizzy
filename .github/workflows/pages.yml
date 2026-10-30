@@ -31,6 +31,10 @@ jobs:
 
       - name: configure pages
         uses: actions/configure-pages@v5
+        with:
+          # turns Pages on with Source: GitHub Actions if it is not on yet,
+          # which is the one setting this workflow cannot otherwise assume
+          enablement: true
 
       - name: upload site
         uses: actions/upload-pages-artifact@v3
